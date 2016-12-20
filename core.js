@@ -194,7 +194,7 @@ function getVal(target, key){
 function processItem(runner, currentValidation, key, context) {
   var value   = getVal(runner.target, key);
   var rule    = currentValidation.rule;
-  var params  = [value].concat(currentValidation.params).concat(context);
+  var params  = [value].concat(currentValidation.params).concat([context, key]);
 
   // If the rule isn't an existence / required check, return
   // true if the value doesn't exist.
